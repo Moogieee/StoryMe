@@ -21,7 +21,9 @@
     event.preventDefault();
 
     var newSentence = $("#userInput").val();
+
     $("#userInput").html("");
+
     storyRef.push(newSentence);
     
 
@@ -30,4 +32,34 @@
   storyRef.on("child_added", function(snapshot){
     $("#storyDiv").append("<br>"+snapshot.val());
 
-  })
+  });
+
+  database.ref().on("child_changed", function(snap){
+
+    console.log(snap.numChildren());
+    var numSentences = snap.numChildren();
+    var limitSentence = 5;
+
+    if(numSentences === 5){
+      $("#storyDiv").append("This is the last sentence! Enter the ending, Make it count!");
+
+      limitSentence = numSentences;
+    }
+
+    if(numSentences === limitSentence++){
+
+     $("#submitSentence").attr("disabled", true);
+    }
+
+
+  });
+    
+
+
+
+
+
+
+
+
+
