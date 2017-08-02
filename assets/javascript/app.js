@@ -28,4 +28,26 @@
 
   storyRef.on("child_added", function(snapshot){
      $("#storyDiv").append("<br>" + snapshot.val());
-  })
+  });
+
+  database.ref().on("child_changed", function(snapshot){
+    // console.log(snapshot.val());
+    console.log(snapshot.numChildren());
+    var numSentences = snapshot.numChildren();
+    var limitSentence = 5;
+
+    if (numSentences === 5) {
+      $("#storyDiv").append("<br>" + "This is the last sentence! Enter the last sentence, make it count!");
+      limitSentence = numSentences;
+
+    }
+
+    if (numSentences === limitSentence++) {
+      $("#submitSentence").attr("disabled", true);
+    }
+
+  });
+
+
+
+
