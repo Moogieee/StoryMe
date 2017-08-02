@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Story Page</title>
+
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- jQuery -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="page-header">
+	<h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">(Logo will go here)</h1>
+</div>
+
+
+	<!-- User will click on a thumbnail on index.html and will bring them to this page where they can start writing their story -->
+
+<div class="container">
+
+	<!-- User sentence will get dumped here -->
+	<div id="storyDiv">
+	Story goes here...
+	</div>
+
+	<!-- User enters their sentence and the input box will follow after the last entered sentence.  But if it's too difficult to do I put the input box at the bottom of where the story will be written. -->
+	<div class="input-group">
+		<input type="text" class="form-control" id="userInput">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button" id="submitSentence">Write</button>
+		</span>
+	</div>
+
+</div> <!-- end container -->
+
+
+
+<script type="text/javascript" src="assets/javascript/app.js"></script>		
+</body>
+</html>
