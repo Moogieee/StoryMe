@@ -23,3 +23,12 @@ Things to Determine:
 Final Package:
 1. Display full story with giphs like a story book.
 2. Sound API will read off the story.
+
+
+For Tomorrow:
+1. merge the branches
+2. get the database to empty
+3. learn about new library
+
+
+
