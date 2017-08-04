@@ -126,7 +126,13 @@ img:hover {
   text-align: center;
   font-family: 'Amatic SC', cursive;
   font-size: 2em;
+}
 
+.sticky {
+  position: fixed;
+  top: 90%;
+  width: 80%;
+  left: 10%;
 }
 
 /* Login Page */
