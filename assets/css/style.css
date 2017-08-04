@@ -1,62 +1,213 @@
-      body {
-        background: url(assets/images/night.jpg) no-repeat center center fixed;
-        background-size: cover;
-        background-attachment: fixed;
-      }
+body {
+  background: url(../images/night.jpg) no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
-      #storyme-logo {
-        font-family: 'Pacifico', cursive;
-        font-size: 10vw;
-        text-align: center;
-        
-      }
+#storyme-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 10vw;
+  text-align: center;
+  
+}
 
-      #logo {
-        margin-bottom: 20px;
-      }
+#logo {
+  margin-bottom: 20px;
+}
 
-      .top-bar, .top-bar ul {
-        background: transparent;
-        color: white;
-      }
+.top-bar, .top-bar ul {
+  background: transparent;
+}
 
-      a {
-        color: white;
-      }
+.links {
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+}
 
-      a:hover {
-        color: #68047F;
-      }
+a {
+  color: white;
+}
 
-      #greenteam-logo {
-          font-family: 'Inconsolata', monospace;
-          font-size: 1em;
-          line-height: 0;
-          color: green;
-          letter-spacing: 2px;
-          font-weight: 900; 
-      }
+a:hover {
+  color: #68047F;
+}
 
-      #first-p {
-          margin-bottom: 2.7%;
-      }
+#greenteam-logo {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1em;
+    line-height: 0;
+    color: green;
+    letter-spacing: 2px;
+    font-weight: 900; 
+}
 
-      #second-p {
-          margin-top: 0px;
-          margin-bottom: 2.1%;
-      }
+#first-p {
+    margin-bottom: 2.7%;
+}
 
-      #third-p {
-          margin-top: 0px;
-          margin-bottom: 0px;
-      }
+#second-p {
+    margin-top: 0px;
+    margin-bottom: 2.1%;
+}
 
-      .thumbnail  {
-        width: 60%;
-        border: 0 none;
-        box-shadow: none;
-      }
+#third-p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
-      .grid-x {
-        text-align: center;
-      }
+.thumbnail, .story-image {
+  width: 60%;
+  border: 0 none;
+  box-shadow: none;
+  position: relative;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.grid-x {
+  text-align: center;
+}
+
+img {
+  opacity: 0.1;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+#imageOne:hover {
+  content: url('../images/easter.jpg');
+}
+
+#imageTwo:hover {
+  content: url('../images/monkey.jpg');
+}
+
+#imageThree:hover {
+  content: url('../images/santa.jpg');
+}
+
+.caption {
+    position: absolute;
+    text-align: center;
+    top: 18%;
+    left: 0;
+    width: 100%;
+    font-size: 2em;
+    font-family: 'Amatic SC', cursive;
+    color: white !important;
+}
+
+.random {
+  overflow-y: ;
+}
+
+#imageOne:hover {
+  content: url('../images/easter.jpg');
+}
+
+#imageTwo:hover {
+  content: url('../images/monkey.jpg');
+}
+
+#imageThree:hover {
+  content: url('../images/santa.jpg');
+}
+/*.caption:hover {
+  display: none;
+}*/
+
+
+/* Story Page */
+#storyDiv {
+  color: white;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+
+}
+
+/* Login Page */
+#nameInput {
+  background-color: rgba(0,0,0,0.2);
+  border: none;
+  color: white;
+  height: 40px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+#enter-btn {
+  padding: 0px, 10px, 10px, 0px;
+  height: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+
+#enter-btn:hover {
+background-position: right center;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .caption {
+    top: 10%;
+    font-size: 2em;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+  .caption {
+    top: 10%;
+    font-size: 2em;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  .caption {
+    top: 10%;
+    font-size: 1.5em;
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+
+  .caption {
+    top: 5%;
+    font-size: 1.5em;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .caption {
+    top: 12%;
+    font-size: 2em;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+  .caption {
+    top: 5%;
+    font-size: 2em;
+  }
+
+}
