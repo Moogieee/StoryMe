@@ -112,6 +112,12 @@
   });
 
 
+//To empty the database in Firebase
+$("#resetBtn").on("click",function(){
+ database.ref().remove(); 
+});
+
+
 
 
 

@@ -29,6 +29,7 @@ For Tomorrow:
 1. merge the branches
 2. get the database to empty
 3. learn about new library
+4. add "write new story" Button
 
 
 
