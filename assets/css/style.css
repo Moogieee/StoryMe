@@ -247,7 +247,16 @@ background-position: right center;
 
   #input-group {
   position: fixed;
-  left: 6%;
+  left: 4%;
+  }
+
+}
+
+@media only screen and (max-width: 300px) {
+
+  #input-group {
+  position: fixed;
+  left: 0%;
   }
 
 }
