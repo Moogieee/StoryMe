@@ -158,6 +158,11 @@ img:hover {
 background-position: right center;
 }
 
+#input-group {
+  position: fixed;
+  left: 35%;
+}
+
 @media only screen and (max-width: 1000px) {
 
   .caption {
@@ -183,6 +188,11 @@ background-position: right center;
     font-size: 1.5em;
   }
 
+  #input-group {
+  position: fixed;
+  left: 30%;
+  }
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -190,6 +200,11 @@ background-position: right center;
   .caption {
     top: 5%;
     font-size: 1.5em;
+  }
+
+  #input-group {
+  position: fixed;
+  left: 25%;
   }
 
 }
@@ -201,6 +216,11 @@ background-position: right center;
     font-size: 2em;
   }
 
+  #input-group {
+  position: fixed;
+  left: 20%;
+}
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -210,4 +230,10 @@ background-position: right center;
     font-size: 2em;
   }
 
+  #input-group {
+  position: fixed;
+  left: 10%;
 }
+
+}
+
