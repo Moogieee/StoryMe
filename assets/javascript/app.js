@@ -140,6 +140,8 @@ storyRef.on("value", function(snap){
 $("#resetBtn").on("click", function(){
 
     database.ref().remove();
+    $("#storyDiv").empty();
+
  })
     
 
