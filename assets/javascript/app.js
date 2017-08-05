@@ -14,6 +14,7 @@
   var storyRef = database.ref("/storyLines"); 
   var usersRef = database.ref("/Users");
   var startingSentence = database.ref("/Starting Sentences");
+  var userNameForAvatar = '';
 
   $("#resetBtn").show();
 
@@ -21,13 +22,12 @@
 ////////The login html page code///////////////// 
 
 ///when the user logs in the user's name is pushed into the users database
+
 $("#login").on("click", function(){
-
-  var userName = $("#nameInput").val().trim();
-  database.ref("/Users").push({userName: userName}); 
-
-}); 
-
+  var userName = $("#nameInput").val().trim();  
+  userNameForAvatar = userName;
+  database.ref("/Users").push({userName: userName});
+});
 
 ///When new user is added to the database if this is the first user then he is moved
 ///to the story themes page to choose a theme that applies to the rest of the players
@@ -78,6 +78,9 @@ $(".story-image").on("click", function(){
 /////////////////////////////////////////////////////
 
 /////////The story page html code ////////////////
+
+//Creating an img element in the #players element to get Adorable Avatar.
+$('#players').html('<img src="https://api.adorable.io/avatars/50/' + userNameForAvatar + '.png/" style="border-radius: 50%; opacity: 100%;">');
 
 
 //////When 
