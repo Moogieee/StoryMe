@@ -1,5 +1,5 @@
   // Initialize Firebase
-  var config = {
+ /* var config = {
     apiKey: "AIzaSyD64Pvbid5872NQNwrRm8pjeWvqJ4wykDM",
     authDomain: "storyme-5b335.firebaseapp.com",
     databaseURL: "https://storyme-5b335.firebaseio.com",
@@ -9,11 +9,26 @@
   };
 
   firebase.initializeApp(config);
+*/
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAP42hRl_xz8Z7SMIRqcBgDuPeNELo0xt4",
+    authDomain: "practicestoryme.firebaseapp.com",
+    databaseURL: "https://practicestoryme.firebaseio.com",
+    projectId: "practicestoryme",
+    storageBucket: "practicestoryme.appspot.com",
+    messagingSenderId: "680274883572"
+  };
+  firebase.initializeApp(config);
+
 
   var database = firebase.database(); ////reference to database root
   var storyRef = database.ref("/storyLines"); 
   var usersRef = database.ref("/Users");
   var startingSentence = database.ref("/Starting Sentences");
+  var usersKeysArr = [];
+  var playersNum = 0;
 
   $("#resetBtn").show();
 
@@ -24,9 +39,35 @@
 $("#login").on("click", function(){
 
   var userName = $("#nameInput").val().trim();
-  database.ref("/Users").push({userName: userName}); 
+  
+  usersRef.child(playersNum+1).update({name: userName, status: "online"});
+  sessionStorage.setItem("playerKey", JSON.stringify(playersNum));
+  sessionStorage.setItem("userName", JSON.stringify(userName));
+  var userNum = JSON.parse(sessionStorage.getItem("playerKey"));
+  console.log(userNum);
+ 
+ if(userNum === 0){
+  console.log("please sign in");
+  }
 
-}); 
+  else if(userNum === 1){
+      console.log("you are the first player");
+
+      $("#login").attr("href", "storyThemes.html");
+       
+      //setTimeout(function(){}, 3000);
+
+
+  }
+  else{
+      console.log("you are not the first player");
+        $("#login").attr("href", "storyPage.html");
+       //setTimeout(function(){}, 3000);
+
+  }
+
+
+});
 
 
 ///When new user is added to the database if this is the first user then he is moved
@@ -34,15 +75,20 @@ $("#login").on("click", function(){
 ///if this is not the first player then he automatically moves to the story page with the
 ///chosen theme
 usersRef.on("value", function(snap){
-  var playersNum = snap.numChildren();
+  playersNum = snap.numChildren();
 
+
+ //var userNum = JSON.parse(sessionStorage.getItem("playerKey"));
+ //console.log(userNum);
+ /*
   if(playersNum === 0){
     console.log("please sign in");
   }
 
-  else if(playersNum === 1){
+  else if(playersNum=== 1){
       console.log("you are the first player");
         $("#login").attr("href", "storyThemes.html");
+
 
   }
   else{
@@ -50,10 +96,26 @@ usersRef.on("value", function(snap){
         $("#login").attr("href", "storyPage.html");
 
   }
+*/
 
+  $("#playerStatus").empty();
+  for (var i = 1; i <= playersNum; i++) {
+    var j = i.toString();
+    var obj = snap.child(j).val();
+    console.log(obj.name);
+    console.log(obj.status);
+    var newUser = $("<p>");
+    newUser.html(obj.name+ " is " + obj.status);
+    $("#playerStatus").append(newUser);
+
+  }
+
+},function(err){
+  console.log(err);
 });
 
 /////////////////////////////////////////////////
+
 
 
 ////The stories themes html page code////////////
@@ -79,8 +141,9 @@ $(".story-image").on("click", function(){
 
 /////////The story page html code ////////////////
 
+$("#resetBtn").hide();
 
-//////When 
+//////When////// 
 startingSentence.on("child_added", function(snap){
 
     console.log(snap.val());
@@ -96,10 +159,11 @@ $("#submitSentence").on("click", function(event){
     event.preventDefault();
 
     var newSentence = $("#userInput").val();
+    var speaker = JSON.parse(sessionStorage.getItem("userName"));
 
     $("#userInput").val('');
 
-    storyRef.push(newSentence);
+    storyRef.push(speaker+" says "+newSentence);
     
 
 });
@@ -141,9 +205,21 @@ $("#resetBtn").on("click", function(){
 
     database.ref().remove();
     $("#storyDiv").empty();
+     window.location = "index.html";
 
- })
+ });
+
+
+////when the user hits the leave button, this user is signed out and his status is updated
+$("#leaveBtn").on("click", function(){
+    var offPlayer = JSON.parse(sessionStorage.getItem("playerKey"));
+    usersRef.child(offPlayer).update({status: "offline"});
+    window.location = "index.html";
+  
+  
+});
     
+  
 
 ///////////////////////////////////////////////////
 
