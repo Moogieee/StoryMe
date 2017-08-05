@@ -1,6 +1,6 @@
 body {
   background: url(../images/night.jpg) no-repeat center center fixed;
-  background-size: cover;
+  background-size: stretch;
   background-attachment: fixed;
 }
 
