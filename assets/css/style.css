@@ -280,18 +280,6 @@ background-position: right center;
   margin: 0;
 }
 
-#footer {
-    position: absolute;
-    bottom: -200px;
-    height: 30px; /*Push must be same height as Footer */
-    color: #000;
-}
-
-#footer p {
-    font-size: 1vw;
-}
-
-
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1000px) {
