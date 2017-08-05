@@ -35,24 +35,22 @@ a:hover {
 
 #greenteam-logo {
     font-family: 'Inconsolata', monospace;
-    font-size: 1em;
-    line-height: 0;
+    font-size: 1.8em;
     color: green;
-    letter-spacing: 2px;
-    font-weight: 900; 
+    font-weight: 1200; 
 }
 
 #first-p {
-    margin-bottom: 2.7%;
+    margin-bottom: -20px;
 }
 
 #second-p {
     margin-top: 0px;
-    margin-bottom: 2.1%;
+    margin-bottom: 0%;
 }
 
 #third-p {
-    margin-top: 0px;
+    margin-top: -22px;
     margin-bottom: 0px;
 }
 
@@ -168,10 +166,6 @@ background-position: right center;
   position: fixed;
   left: 40%;
 }
-
-#resetBtn {
-    display: none;
-  }
 
 @media only screen and (max-width: 1000px) {
 
