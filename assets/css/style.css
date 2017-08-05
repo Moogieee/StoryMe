@@ -2,6 +2,7 @@ body {
   background: url(../images/night.jpg) no-repeat center center fixed;
   background-size: stretch;
   background-attachment: fixed;
+  margin: 30px;
 }
 
 #storyme-logo {
@@ -124,6 +125,8 @@ img:hover {
   text-align: center;
   font-family: 'Amatic SC', cursive;
   font-size: 2em;
+  word-wrap: break-word;
+  max-height: auto;
 }
 
 .sticky {
@@ -139,7 +142,6 @@ img:hover {
   border: none;
   color: white;
   height: 40px;
-  margin-right: 5px;
   border-radius: 2px;
 }
 
@@ -162,11 +164,79 @@ img:hover {
 background-position: right center;
 }
 
-#input-group {
-  position: fixed;
-  left: 40%;
+
+/* PLAYER SECTION */
+
+.player-list {
+  width: 100%;
+  line-height: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  margin-top: 40%;
 }
 
+.player-list, .player-list ul {
+  list-style-type: none;
+}
+
+.player-list ul {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.player-list ul li {
+  height: 4.0625rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+  justify-content: space-between;
+      -webkit-align-items: center;
+           -ms-flex-align: center;
+              align-items: center;
+}
+
+.player-list li {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.player-list header {
+  padding-left: 0.75rem;
+  padding-bottom: 0.5rem;
+  height: 45px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+       -ms-flex-align: end;
+  align-items: flex-end;
+  cursor: default;
+  background-color: inherit;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: 1px solid grey;
+}
+
+.player-list li {
+  position: relative;
+
+}
+
+.player-list li label {
+  color: #0a0a0a;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+/* MEDIA QUERIES */
 @media only screen and (max-width: 1000px) {
 
   .caption {
@@ -174,10 +244,6 @@ background-position: right center;
     font-size: 2em;
   }
 
-  #input-group {
-  position: fixed;
-  left: 35%;
-  }
 
 }
 
@@ -188,10 +254,6 @@ background-position: right center;
     font-size: 2em;
   }
   
-  #input-group {
-    position: fixed;
-    left: 35%;
-  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -199,11 +261,6 @@ background-position: right center;
   .caption {
     top: 10%;
     font-size: 1.5em;
-  }
-
-  #input-group {
-  position: fixed;
-  left: 30%;
   }
 
 }
@@ -216,8 +273,8 @@ background-position: right center;
   }
 
   #input-group {
-  position: fixed;
-  left: 25%;
+    position: fixed;
+    left: 8%;
   }
 
 }
@@ -229,21 +286,11 @@ background-position: right center;
     font-size: 2em;
   }
 
-  #input-group {
-  position: fixed;
-  left: 13%;
-  }
-
-  .input-group-button {
-    position: relative;
-    left: 20%;
-    margin: 0 .3em;
-  }
-
   #userInput {
     position: fixed;
     bottom: 2.6em
   }
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -251,20 +298,6 @@ background-position: right center;
   .caption {
     top: 5%;
     font-size: 2em;
-  }
-
-  #input-group {
-  position: fixed;
-  left: 4%;
-  }
-
-}
-
-@media only screen and (max-width: 300px) {
-
-  #input-group {
-  position: fixed;
-  left: 0%;
   }
 
 }
