@@ -282,7 +282,7 @@ background-position: right center;
 
 #footer {
     position: absolute;
-    bottom: -100px;
+    bottom: -200px;
     height: 30px; /*Push must be same height as Footer */
     color: #000;
 }
