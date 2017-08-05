@@ -169,6 +169,10 @@ background-position: right center;
   left: 40%;
 }
 
+#resetBtn {
+    display: none;
+  }
+
 @media only screen and (max-width: 1000px) {
 
   .caption {
@@ -236,6 +240,16 @@ background-position: right center;
   left: 13%;
   }
 
+  .input-group-button {
+    position: relative;
+    left: 20%;
+    margin: 0 .3em;
+  }
+
+  #userInput {
+    position: fixed;
+    bottom: 2.6em
+  }
 }
 
 @media only screen and (max-width: 400px) {
