@@ -25,64 +25,69 @@
   </head>
   <body>
 
-<!-- ================== Navigation ================== -->
 
-    <div class="grid-container">
-      <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+<!-- ================== Player Status ================== -->
 
-        <!-- hamburger button -->
-
-        <button class="menu-icon" type="button" data-toggle></button>
-        <div class="title-bar-title">Menu</div>
+    <div class="grid-x">
+      <div class="large-2">
       </div>
-
-      <!-- animation for menu when hamburger is cicked -->
-      <div class="top-bar" id="example-animated-menu" data-animate="fade-in fade-out">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <div id="greenteam-logo"><p id="first-p">gre</p><p id="second-p">enT</p><p id="third-p">eam</p></div>
-            <!-- <div id="greenteam-logo"><p id="first-p">Green</p><p id="second-p">Team</p></div> -->
-          </ul>
+      <!-- Story Dump -->
+      <div class="small-12 large-8">
+        <div id="storyDiv"> 
         </div>
-
-         <div class="top-bar-right">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li class="links"><a href="#">Main</a></li>            
-            <li class="links"><a href="#">About</a></li>
-            <li class="links"><a href="#">Contact</a></li>
+      </div>
+      <div class="small-12 large-2" id="playerStatus">
+        <section class="player-list">
+          <header id="players">Players</header>
+          <ul>
+            <li> 
+            </li>
           </ul>
-        </div> 
+        </section>
       </div>
+    </div>
 
-<!-- ================== Story Dump ================== -->
-
-      <div id="storyDiv">
-      </div>
-
-      <!-- ============ Player Status ============= -->
-
-      <div id="playerStatus">
-      </div>)
 
 <!-- ================== User Story Input ================== -->
 
       
-        <div class="grid-x">
-          <div class="small-12 medium-8 large-6 cell">
-            <div class="sticky">
-              <div class="input-group"> 
-                <input type="text" id="userInput">
-                <div class="input-group-button">
-                  <input type="submit" class="button" value="Write" id="submitSentence">
-                </div>
-                <div class="input-group-button">
-                  <input type="reset" class="button" value="Reset" id="resetBtn">
-                </div>
+<!--       <div class="grid-x">
+        <div class="medium-2 large-3 cell">
+        </div>
+        <div class="medium-8 large-6 cell">
+          <div class="sticky">
+            <div class="input-group"> 
+              <input type="text" id="userInput">
+              <div class="input-group-button">
+                <input type="submit" class="button" value="Write" id="submitSentence">
               </div>
-          </div>
+              <div class="input-group-button">
+                <input type="reset" class="button" value="Reset" id="resetBtn">
+              </div>
+            </div>
           </div>
         </div>
-      
+        <div class="medium-2 large-3 cell">
+        </div>
+      </div> -->
+
+      <div class="grid-x sticky">
+        <div class="medium-2 large-3 cell">
+        </div>
+          <div class="medium-8 large-6 cell" id="input-group">
+            <div class="input-group"> 
+              <input type="text" id="userInput">
+              <div class="input-group-button">
+                <input type="submit" class="button" value="Write" id="submitSentence">
+              </div>
+              <div class="input-group-button">
+                <input type="reset" class="button" value="Reset" id="resetBtn">
+              </div>
+            </div>
+          </div>
+        <div class="medium-2 large-3 cell">
+        </div>
+      </div> 
 
         
     </div> <!-- end container -->

@@ -18,6 +18,7 @@ body {
 
 .top-bar, .top-bar ul {
   background: transparent;
+  bottom: -350px;
 }
 
 .links {
@@ -114,9 +115,7 @@ img:hover {
 #imageThree:hover {
   content: url('../images/santa.jpg');
 }
-/*.caption:hover {
-  display: none;
-}*/
+
 
 
 /* Story Page */
@@ -134,6 +133,51 @@ img:hover {
   top: 90%;
   width: 80%;
   left: 10%;
+}
+
+#userInput {
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
+
+#submitSentence {
+  padding: 0px, 10px, 10px, 0px;
+  height: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  margin-left: 5px;
+}
+
+#submitSentence:hover {
+  background-position: right center;
+}
+
+#resetBtn {
+  padding: 0px, 10px, 10px, 0px;
+  height: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  margin-left: 5px;
+}
+
+#resetBtn:hover {
+  background-position: right center;
 }
 
 /* Login Page */
@@ -236,6 +280,19 @@ background-position: right center;
   margin: 0;
 }
 
+#footer {
+    position: absolute;
+    bottom: -100px;
+    height: 30px; /*Push must be same height as Footer */
+    color: #000;
+}
+
+#footer p {
+    font-size: 1vw;
+}
+
+
+
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1000px) {
 
@@ -243,7 +300,6 @@ background-position: right center;
     top: 10%;
     font-size: 2em;
   }
-
 
 }
 
@@ -286,10 +342,6 @@ background-position: right center;
     font-size: 2em;
   }
 
-  #userInput {
-    position: fixed;
-    bottom: 2.6em
-  }
 
 }
 
