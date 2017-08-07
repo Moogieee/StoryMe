@@ -5,14 +5,48 @@ body {
   margin: 30px;
 }
 
+/* Login Page */
+#nameInput {
+  background-color: rgba(0,0,0,0.2);
+  border: none;
+  color: white;
+  height: 40px;
+  border-radius: 2px;
+}
+
+#formErrorMessage {
+  color: white;
+}
+
+#submit-button {
+  padding: 0px, 10px, 10px, 0px;
+  height: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+
+#submit-button:hover {
+background-position: right center;
+}
+
+#welcomeMessage {
+  text-align: center;
+  color: red;
+
+}
+
 #storyme-logo {
   font-family: 'Pacifico', cursive;
   font-size: 10vw;
   
-}
-
-#playerStatus {
-  color: white;
 }
 
 #logo {
@@ -60,6 +94,13 @@ a:hover {
     margin-bottom: 0px;
 }
 
+
+
+
+
+
+
+/* STORYTHEME */
 .thumbnail, .story-image {
   width: 60%;
   border: 0 none;
@@ -122,6 +163,12 @@ img:hover {
 
 
 
+
+
+
+
+
+
 /* Story Page */
 #storyDiv {
   color: white;
@@ -164,7 +211,7 @@ img:hover {
   background-position: right center;
 }
 
-#resetBtn {
+#resetBtn, #leaveBtn{
   padding: 0px, 10px, 10px, 0px;
   height: 40px;
   font-family: 'Amatic SC', cursive;
@@ -180,49 +227,11 @@ img:hover {
   margin-left: 5px;
 }
 
-#resetBtn:hover {
+#resetBtn:hover, #leaveBtn:hover {
   background-position: right center;
 }
 
-/* Login Page */
-#nameInput {
-  background-color: rgba(0,0,0,0.2);
-  border: none;
-  color: white;
-  height: 40px;
-  border-radius: 2px;
-}
-
-#formErrorMessage {
-  color: white;
-}
-
-#submit-button {
-  padding: 0px, 10px, 10px, 0px;
-  height: 40px;
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 2px;
-  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-}
-
-#submit-button:hover {
-background-position: right center;
-}
-
-#welcomeMessage {
-  text-align: center;
-  color: red;
-
-}
-
-/* PLAYER SECTION */
+/* PLAYER SECTION IN STORYPAGE*/
 
 .player-list {
   width: 100%;
@@ -276,7 +285,6 @@ background-position: right center;
   cursor: default;
   background-color: inherit;
   font-weight: bold;
-  text-align: left;
   text-transform: uppercase;
   border-bottom: 1px solid grey;
 }
@@ -292,6 +300,18 @@ background-position: right center;
   letter-spacing: 0;
   margin: 0;
 }
+
+#playerStatus {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+
+
+
+
+
 
 
 /* MEDIA QUERIES */
@@ -342,7 +362,6 @@ background-position: right center;
     top: 12%;
     font-size: 2em;
   }
-
 
 }
 
