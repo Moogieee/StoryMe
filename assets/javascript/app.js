@@ -331,6 +331,11 @@ $("#leaveBtn").on("click", function(){
 //==========================ANIMATIONS==========================//
 $(document).ready(function() {
   $("#storyme-logo").hide();
-  $("#storyme-logo").fadeIn(3000);
-  
+  $("#storyme-logo").fadeIn(2000);
+  $(".one").hide();
+  $(".one").fadeIn(4000);
+  $(".two").hide();
+  $(".two").fadeIn(6000);
+  $(".three").hide();
+  $(".three").fadeIn(8000);
 });
