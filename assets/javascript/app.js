@@ -11,7 +11,7 @@
   // firebase.initializeApp(config);
 
 
-/* Carie's Firebase */
+/* Carie's Firebase 
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCgkD-pSu1mv32BAbAQ5H3KHRmZrRBxlfs",
@@ -22,7 +22,7 @@
     messagingSenderId: "992428345090"
   };
   firebase.initializeApp(config);
-
+*/
 
   // Initialize Firebase
   // var config = {
@@ -34,6 +34,18 @@
   //   messagingSenderId: "680274883572"
   // };
   // firebase.initializeApp(config);
+
+  //Peter's Firebase
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyALvp_mfYnds8dN4HuM1W0s2qKAZtBq47o",
+    authDomain: "storyme-4916c.firebaseapp.com",
+    databaseURL: "https://storyme-4916c.firebaseio.com",
+    projectId: "storyme-4916c",
+    storageBucket: "storyme-4916c.appspot.com",
+    messagingSenderId: "376058020851"
+  };
+  firebase.initializeApp(config);
 
 
   var database = firebase.database(); ////reference to database root
@@ -110,8 +122,6 @@ $("#submit-button").on("click", function(event){
       $("#welcomeMessage").append(proceedBtn2);
       proceedBtn2.show();
      }
-
-
 });
 
 
@@ -151,6 +161,7 @@ usersRef.on("value", function(snap){
     }
 
 */
+
     $("#playerStatus").empty();
     if(playersNum > 0){ 
     for (var i = 1; i <= playersNum; i++) {
@@ -163,6 +174,23 @@ usersRef.on("value", function(snap){
   }
 },function(err){
   console.log(err);
+});
+
+
+///////Populating "players" side bar with names and avatars.////////
+//First, we get a snap of our Users when the value changes.
+usersRef.on("value", function(snap) {
+  //Gets a snap of each child of "Users"
+  snap.forEach(function(childSnap) {
+    //Yet another snap to continue drilling down into data
+    childSnap.forEach(function(grandChild) {
+      //This finally gives me the val. 
+      var grandChildVal = grandChild.val();
+      console.log(grandChildVal)
+      //Then we create a list item for each grandChild.
+      $('#playerStatus').append('<li>' + grandChildVal + ' is online<img class="avatar" src="https://api.adorable.io/avatars/40/' + grandChildVal + '.png/" style="border-radius: 50%; opacity: 1;"></li>')
+    });
+  });
 });
 
 
