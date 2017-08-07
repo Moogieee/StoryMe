@@ -8,12 +8,12 @@ body {
 #storyme-logo {
   font-family: 'Pacifico', cursive;
   font-size: 10vw;
-  text-align: center;
   
 }
 
 #logo {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .top-bar, .top-bar ul {
@@ -189,7 +189,11 @@ img:hover {
   border-radius: 2px;
 }
 
-#enter-btn {
+#formErrorMessage {
+  color: white;
+}
+
+#submit-button {
   padding: 0px, 10px, 10px, 0px;
   height: 40px;
   font-family: 'Amatic SC', cursive;
@@ -204,10 +208,15 @@ img:hover {
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
 
-#enter-btn:hover {
+#submit-button:hover {
 background-position: right center;
 }
 
+#welcomeMessage {
+  text-align: center;
+  color: red;
+
+}
 
 /* PLAYER SECTION */
 
