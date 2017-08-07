@@ -20,8 +20,11 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Pacifico|Amatic+SC" rel="stylesheet">
 
+    <!-- Angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
   </head>
-  <body>
+  <body ng-app="">
 
 
     <div class="grid-container">
@@ -29,38 +32,38 @@
 
 <!-- ================== Logo ================== -->
 
-      <div class="row" id="logo">
-        <div class="large-12 cell" style="margin-bottom: 20px">
-          <div id="storyme-logo">
-            StoryMe!
+      <div class="row">
+          <div class="large-12 cell" id="logo">
+            <span id="storyme-logo">StoryMe!</span>
           </div>
-        </div>
       </div>
 
 
 <!-- ================== WelcomeMessage ================== -->
   
       <div id="welcomeMessage">
+
       </div>
 
 <!-- ================== Login ================== -->
 
+    <form name="myForm">
       <div class="grid-x">
         <div class="medium-2 large-4 cell">
         </div>
           <div class="small-10 medium-8 large-4 cell" id="input-group">
              <div class="input-group">
-                <input type="text" id="nameInput" placeholder="Name">
+                <input type="text" id="nameInput" placeholder="Name" name="myName" ng-model="myName" required>
                     <div class="input-group-button">
-                      <a id="login">
-                       <input type="submit" class="button" value="Enter" id="enter-btn">
-                      </a>
+                      <input type="submit" class="button" value="Enter" id="submit-button" ng-disabled="myForm.$invalid">
                     </div>
               </div>
+            <span ng-show="myForm.myName.$touched && myForm.myName.$invalid" id="formErrorMessage" >Please enter your name.</span>
           </div>
         <div class="medium-2 large-4 cell">
         </div>
       </div>  
+    </form>
 
 <!-- ================== Footer Navigation ================== -->
 
