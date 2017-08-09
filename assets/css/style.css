@@ -5,6 +5,12 @@ body {
   margin: 30px;
 }
 
+/*window height for index.html page*/
+#index {
+    height: 600px;
+    margin-top: 10%;
+}
+
 /* Login Page */
 #nameInput {
   background-color: rgba(0,0,0,0.2);
@@ -18,7 +24,7 @@ body {
   color: white;
 }
 
-#submit-button {
+#submit-button, #proceedBtn1, #proceedBtn2 {
   padding: 0px, 10px, 10px, 0px;
   height: 40px;
   font-family: 'Amatic SC', cursive;
@@ -33,7 +39,7 @@ body {
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
 
-#submit-button:hover {
+#submit-button:hover, #proceedBtn1:hover, #proceedBtn2:hover {
 background-position: right center;
 }
 
@@ -54,13 +60,19 @@ background-position: right center;
   text-align: center;
 }
 
-.top-bar, .top-bar ul {
+.footer {
   background: transparent;
-  bottom: -350px;
+  bottom: -190px;
+  position: relative;
+  display: none;
+}
+
+.show, .footer:hover {
+    display: block;
 }
 
 .links {
-  color: white;
+  color: white ;
   font-family: 'Amatic SC', cursive;
   font-size: 2em;
 }
@@ -71,6 +83,7 @@ a {
 
 a:hover {
   color: #68047F;
+  text-decoration: none;
 }
 
 #greenteam-logo {
@@ -145,10 +158,6 @@ img:hover {
     color: white !important;
 }
 
-.random {
-  overflow-y: ;
-}
-
 #imageOne:hover {
   content: url('../images/easter.jpg');
 }
@@ -171,6 +180,8 @@ img:hover {
 
 /* Story Page */
 #storyDiv {
+  margin-top: 5%;
+  margin-right: 10px;
   color: white;
   text-align: center;
   font-family: 'Amatic SC', cursive;
@@ -211,7 +222,7 @@ img:hover {
   background-position: right center;
 }
 
-#resetBtn, #leaveBtn{
+#resetBtn, #leaveBtn, #readBtn, #sentimentBtn {
   padding: 0px, 10px, 10px, 0px;
   height: 40px;
   font-family: 'Amatic SC', cursive;
@@ -227,8 +238,12 @@ img:hover {
   margin-left: 5px;
 }
 
-#resetBtn:hover, #leaveBtn:hover {
+#resetBtn:hover, #leaveBtn:hover, #readBtn:hover, #sentimentBtn:hover {
   background-position: right center;
+}
+
+#lastSentenceWarning {
+  color: red;
 }
 
 /* PLAYER SECTION IN STORYPAGE*/
@@ -236,10 +251,6 @@ img:hover {
 .player-list {
   width: 100%;
   line-height: 1;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   background: rgba(0,0,0,0.2);
   color: white;
   margin-top: 40%;
@@ -259,9 +270,6 @@ img:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-  justify-content: space-between;
       -webkit-align-items: center;
            -ms-flex-align: center;
               align-items: center;
@@ -291,7 +299,6 @@ img:hover {
 
 .player-list li {
   position: relative;
-
 }
 
 .player-list li label {
@@ -302,19 +309,29 @@ img:hover {
 }
 
 #playerStatus {
-  color: white;
   padding-top: 10px;
   padding-bottom: 5px;
+}
+
+#sentimentDiv {
+  font-size: 4vw;
+  text-align: center;
 }
 
 
 
 
 
-
-
-
 /* MEDIA QUERIES */
+
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 1300px) {
+
+}
+
 @media only screen and (max-width: 1000px) {
 
   .caption {
@@ -330,7 +347,7 @@ img:hover {
     top: 10%;
     font-size: 2em;
   }
-  
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -371,5 +388,5 @@ img:hover {
     top: 5%;
     font-size: 2em;
   }
-
+  
 }

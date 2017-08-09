@@ -24,8 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
   </head>
-  <body ng-app="">
-
+  <body id="index" ng-app="">
 
     <div class="grid-container">
       
@@ -37,7 +36,6 @@
             <span id="storyme-logo">StoryMe!</span>
           </div>
       </div>
-
 
 <!-- ================== WelcomeMessage ================== -->
   
@@ -53,9 +51,15 @@
         </div>
           <div class="small-10 medium-8 large-4 cell" id="input-group">
              <div class="input-group">
-                <input type="text" id="nameInput" placeholder="Name" name="myName" ng-model="myName" required>
+                <input type="text" id="nameInput" placeholder="Name" maxlength="20" name="myName" ng-model="myName" required>
                     <div class="input-group-button">
                       <input type="submit" class="button" value="Enter" id="submit-button" ng-disabled="myForm.$invalid">
+                    </div>
+                    <div class="input-group-button">
+                      <input type="submit" class="button" value="Proceed" id="proceedBtn1" ng-disabled="myForm.$invalid">
+                    </div>
+                    <div class="input-group-button">
+                      <input type="submit" class="button" value="Proceed" id="proceedBtn2" ng-disabled="myForm.$invalid">
                     </div>
               </div>
             <span ng-show="myForm.myName.$touched && myForm.myName.$invalid" id="formErrorMessage" >Please enter your name.</span>
@@ -67,9 +71,9 @@
 
 <!-- ================== Footer Navigation ================== -->
 
-      <div class="top-bar" id="example-animated-menu" data-animate="fade-in fade-out">
+<!--       <div class="top-bar">
         <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
+          <ul class="dropdown menu">
             <div id="greenteam-logo"><p id="first-p">gre</p><p id="second-p">enT</p><p id="third-p">eam</p></div>
           </ul>
         </div>
@@ -80,7 +84,24 @@
             <li class="links"><a href="#">Contact</a></li>
           </ul>
         </div> 
+      </div> -->
+    
+      <div class="footer">
+        <div class="grid-x">
+          <div class="large-2 cell">
+            <div id="greenteam-logo"><p id="first-p">gre</p><p id="second-p">enT</p><p id="third-p">eam</p></div>
+          </div>
+          <div class="large-6 cell">
+          </div>
+          <div class="large-4 cell">
+            <ul style="list-style-type: none">
+              <li class="links"><a href="#">About</a></li>
+              <li class="links"><a href="#">Contact</a></li>
+            </ul>
+          </div> 
+        </div>
       </div>
+      
     </div> <!-- end container -->
 
     <script src="foundation/js/vendor/jquery.js"></script>

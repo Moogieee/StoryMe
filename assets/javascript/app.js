@@ -35,6 +35,43 @@
   // };
   // firebase.initializeApp(config);
 
+  //==========================ANIMATIONS==========================//
+$(document).ready(function() {
+  $("#storyme-logo").hide();
+  $("#storyme-logo").fadeIn(2000);
+  $(".one").hide();
+  $(".one").fadeIn(4000);
+  $(".two").hide();
+  $(".two").fadeIn(6000);
+  $(".three").hide();
+  $(".three").fadeIn(8000);
+  $("#proceedBtn1").hide();
+  $("#proceedBtn2").hide();
+
+
+
+});
+
+
+
+
+// show footer on scroll on index.html
+$(window).scroll(function(event) {
+  function footer()
+    {
+        var scroll = $(window).scrollTop(); 
+        if(scroll>20)
+        { 
+            $(".footer").fadeIn("slow").addClass("show");
+        }
+        else
+        {
+            $(".footer").fadeOut("slow").removeClass("show");
+        }
+    }
+    footer();
+});
+
 
   var database = firebase.database(); ////reference to database root
   var storyRef = database.ref("/storyLines"); 
@@ -42,10 +79,9 @@
   var startingSentence = database.ref("/Starting Sentences");
   var themeSelectedRef = database.ref("/themeSelected");
   var themeSelected = false;
-
- 
   var playersNum = 0;
  
+ var finalStory = [];
   
 
   var reset = function(){
@@ -87,9 +123,10 @@ $("#submit-button").on("click", function(event){
       console.log("you are the first player");
 
       $("#welcomeMessage").html("You are the first player! Please proceed to choose the story theme ");
-       var proceedBtn1 = $("<button id='proceedBtn1'>Proceed</button>");
-       proceedBtn1.show();
-       $("#welcomeMessage").append(proceedBtn1);
+       var proceedBtn1 = $("<button id='proceedBtn1'> Proceed</button>");
+       $("#submit-button").hide();
+       $("#proceedBtn1").show();
+       // $("#welcomeMessage").append(proceedBtn1);
     }
 
     else if (!themeSelected){
@@ -98,17 +135,18 @@ $("#submit-button").on("click", function(event){
 
       startingSentence.on("child_added", function(snap){
         $("#welcomeMessage").html("Ready to Play!")
-         var proceedBtn2 = $("<button id='proceedBtn2'>Proceed</button>");
-            $("#welcomeMessage").append(proceedBtn2);
-            proceedBtn2.show();
+          var proceedBtn2 = $("<button id='proceedBtn2'>Proceed</button>");
+          $("#submit-button").hide();
+          $("#proceedBtn2").show();
     })
     }
      else //if (currentUserNum > 1 && (themeSelected))
      {
 
-      var proceedBtn2 = $("<button id='proceedBtn2'>Proceed</button>");
-      $("#welcomeMessage").append(proceedBtn2);
-      proceedBtn2.show();
+      var proceedBtn2 = $("<button id='proceedBtn2'>Press Enter to Play</button>");
+        $("#welcomeMessage").html("Proceed to Play")
+          $("#submit-button").hide();
+          $("#proceedBtn2").show();
      }
 
 
@@ -156,8 +194,8 @@ usersRef.on("value", function(snap){
     for (var i = 1; i <= playersNum; i++) {
       var j = i.toString();
       var obj = snap.child(j).val();
-      var newUser = $("<p>");
-      newUser.html(obj.name+ " is " + obj.status);
+      var newUser = $("<li>");
+      newUser.html('<img class="avatar" src="https://api.adorable.io/avatars/40/' + obj.name + '.png/" style="border-radius: 50%; opacity: 1; margin-right: 10px;">' + ' ' + obj.name + ' is ' + obj.status + '</li>');
       $("#playerStatus").append(newUser);
     }
   }
@@ -277,7 +315,8 @@ $("#submitSentence").on("click", function(event){
 ///in the story page
 storyRef.on("child_added", function(snapshot){
     console.log(snapshot.val());
-    $("#storyDiv").append("<br>"+snapshot.val().speaker+ " says "+snapshot.val().newSentence);
+    finalStory.push(snapshot.val().newSentence);
+    $("#storyDiv").append("<br><span style='color: white; font-weight: bold; font-family: Josefin Slab; font-size: 1em'>"+ snapshot.val().speaker + " says: </span>" + snapshot.val().newSentence);
 
 });
 
@@ -292,13 +331,19 @@ storyRef.on("value", function(snap){
     var limitSentence = 5;
 
     if(numSentences === 5){
-      $("#storyDiv").append("This is the last sentence! Enter the ending, Make it count!");
+      $("#lastSentenceWarning").html("This is the last sentence! Enter the ending, Make it count!");
 
+    }
+
+    if(numSentences === 6) {
+      $("#lastSentenceWarning").remove();
     }
 
     if(numSentences === (limitSentence+1)){
 
      $("#submitSentence").attr("disabled", true);
+
+     storyRedisplay();
 
      $("#resetBtn").show();
     }
@@ -306,6 +351,73 @@ storyRef.on("value", function(snap){
 
   });
 
+/////When the last sentence is entered, the whole story is displayed without the speakers
+var storyRedisplay = function(){
+
+ $("#storyDiv").empty();
+  $("#storyDiv").append("Here is the story!"+"<br>");
+  for (var i = 0; i < finalStory.length; i++) {
+    $("#storyDiv").append(finalStory[i]+"<br>");
+
+ }
+}
+
+////text to speech to tell the story
+var storyTell = function(){
+
+   var text = encodeURIComponent(finalStory.toString());
+    var url = "http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen=32&client=tw-ob&q="+ text +"&tl=En-gb";
+    var speech = $("<audio>");
+    speech.attr("src", url).get(0).play();
+
+
+}
+
+////display sentiment
+
+var sentimentStory = function(){
+
+
+ var documents =  [];
+  for (var i = 0; i < finalStory.length; i++) {
+    var lineObj = {id: i, "text": finalStory[i]};
+    documents.push(lineObj);
+  }
+
+   var params = {
+            // Request parameters
+          "numberOfLanguagesToDetect": 1,
+        };
+      
+       $.ajax({
+            url:  "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment",
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Content-Type","application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","16a787fa169245dc87fb41f6ddb7d0f0");
+            },
+            type: "POST",
+            // Request body
+            data: JSON.stringify({
+                 documents: documents
+
+               }),
+        })
+        .done(function(data) {
+            var storySentimentScore = 0;
+            console.log(data.documents[0].score);
+            for (var i = 0; i < data.documents.length; i++) {
+              storySentimentScore+= data.documents[i].score;
+            }
+
+           storySentimentScore = Math.floor(storySentimentScore / data.documents.length * 100);
+            console.log(storySentimentScore);
+            $("#sentimentDiv").append(storySentimentScore + "%");
+        })
+        .fail(function() {
+            console.log("error");
+        });
+  }
 ////When the reset button is pressed the database is cleared  
 $("#resetBtn").on("click", function(){
     reset();
@@ -323,19 +435,28 @@ $("#leaveBtn").on("click", function(){
   
 });
     
+$("#readBtn").on("click", function(){
+   storyTell();
+
+})
+
+$("#sentimentBtn").on("click", function(){
+  sentimentStory();
+})
+
+//This changes the player's status to "offline" if the user navigates away.
+//IMPORTANT: The following code block must always go after the one that sets the player staturs to "online."
+$(window).on('unload', function() {
+    var offPlayer = JSON.parse(sessionStorage.getItem("playerKey"));
+    usersRef.child(offPlayer).update({status: "offline"});
+    window.location = "index.html";  
+});
+//Show player status as "online" on screen load.
+$(window).on('load', function() {
+    var onPlayer = JSON.parse(sessionStorage.getItem("playerKey"));
+    usersRef.child(onPlayer).update({status: "online"});
   
+});
+ 
 
 ///////////////////////////////////////////////////
-
-
-//==========================ANIMATIONS==========================//
-$(document).ready(function() {
-  $("#storyme-logo").hide();
-  $("#storyme-logo").fadeIn(2000);
-  $(".one").hide();
-  $(".one").fadeIn(4000);
-  $(".two").hide();
-  $(".two").fadeIn(6000);
-  $(".three").hide();
-  $(".three").fadeIn(8000);
-});

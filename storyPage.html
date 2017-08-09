@@ -20,16 +20,12 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Pacifico|Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Pacifico|Amatic+SC|Josefin+Slab" rel="stylesheet">
 
   </head>
   <body>
 
 
-
-    <div  id="playerId">
-      
-    </div>
 
 <!-- ================== Player Status ================== -->
 
@@ -44,7 +40,7 @@
       <div class="small-12 large-2">
         <section class="player-list">
           <header>Players</header>
-          <ul id="playerStatus">
+          <ul id="playerStatus" style="word-wrap: break-word;">
             <li> 
             </li>
           </ul>
@@ -52,6 +48,10 @@
       </div>
     </div>
 
+  <!-- ================== Sentiment Div ================== -->
+
+      <div id="sentimentDiv">
+      </div>
 
 <!-- ================== User Story Input ================== -->
 
@@ -77,6 +77,8 @@
       </div> -->
 
       <div class="grid-x sticky">
+        <div class="large-12 cell" id="lastSentenceWarning">
+        </div>
         <div class="medium-2 large-3 cell">
         </div>
           <div class="medium-8 large-6 cell" id="input-group">
@@ -91,13 +93,21 @@
               <div class="input-group-button">
                 <input type="reset" class="button" value="Leave" id="leaveBtn">
               </div>
+              <div class="input-group-button">
+                <input type="submit" class="button" value="Read Story" id="readBtn">
+              </div>
+              <div class="input-group-button">
+                <input type="submit" class="button" value="Sentiment" id="sentimentBtn">
+              </div>
             </div>
           </div>
         <div class="medium-2 large-3 cell">
         </div>
       </div> 
 
-        
+
+
+
     </div> <!-- end container -->
 
     <script src="foundation/js/vendor/jquery.js"></script>
