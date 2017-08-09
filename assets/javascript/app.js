@@ -316,7 +316,7 @@ $("#submitSentence").on("click", function(event){
 storyRef.on("child_added", function(snapshot){
     console.log(snapshot.val());
     finalStory.push(snapshot.val().newSentence);
-    $("#storyDiv").append("<br><span style='color: white; font-weight: bold; font-family: Josefin Slab; font-size: 1em'>"+ snapshot.val().speaker + " says: </span>" + snapshot.val().newSentence);
+    $("#storyDiv").append("<br><span style='color: white; font-weight: bold; font-size: 1em'>"+ snapshot.val().speaker + " says: </span>" + snapshot.val().newSentence);
 
 });
 
