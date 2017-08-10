@@ -1,62 +1,392 @@
-      body {
-        background: url(assets/images/night.jpg) no-repeat center center fixed;
-        background-size: cover;
-        background-attachment: fixed;
-      }
+body {
+  background: url(../images/night.jpg) no-repeat center center fixed;
+  background-size: stretch;
+  background-attachment: fixed;
+  margin: 30px;
+}
 
-      #storyme-logo {
-        font-family: 'Pacifico', cursive;
-        font-size: 10vw;
-        text-align: center;
-        
-      }
+/*window height for index.html page*/
+#index {
+    height: 600px;
+    margin-top: 10%;
+}
 
-      #logo {
-        margin-bottom: 20px;
-      }
+/* Login Page */
+#nameInput {
+  background-color: rgba(0,0,0,0.2);
+  border: none;
+  color: white;
+  height: 40px;
+  border-radius: 2px;
+}
 
-      .top-bar, .top-bar ul {
-        background: transparent;
-        color: white;
-      }
+#formErrorMessage {
+  color: white;
+}
 
-      a {
-        color: white;
-      }
+#submit-button, #proceedBtn1, #proceedBtn2 {
+  padding: 0px, 10px, 10px, 0px;
+  height: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
 
-      a:hover {
-        color: #68047F;
-      }
+#submit-button:hover, #proceedBtn1:hover, #proceedBtn2:hover {
+background-position: right center;
+}
 
-      #greenteam-logo {
-          font-family: 'Inconsolata', monospace;
-          font-size: 1em;
-          line-height: 0;
-          color: green;
-          letter-spacing: 2px;
-          font-weight: 900; 
-      }
+#welcomeMessage {
+  text-align: center;
+  color: red;
 
-      #first-p {
-          margin-bottom: 2.7%;
-      }
+}
 
-      #second-p {
-          margin-top: 0px;
-          margin-bottom: 2.1%;
-      }
+#storyme-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 10vw;
+  
+}
 
-      #third-p {
-          margin-top: 0px;
-          margin-bottom: 0px;
-      }
+#logo {
+  margin-bottom: 30px;
+  text-align: center;
+}
 
-      .thumbnail  {
-        width: 60%;
-        border: 0 none;
-        box-shadow: none;
-      }
+.footer {
+  background: transparent;
+  bottom: -190px;
+  position: relative;
+  display: none;
+}
 
-      .grid-x {
-        text-align: center;
-      }
+.show, .footer:hover {
+    display: block;
+}
+
+.links {
+  color: white ;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #68047F;
+  text-decoration: none;
+}
+
+#greenteam-logo {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.8em;
+    color: green;
+    font-weight: 1200; 
+}
+
+#first-p {
+    margin-bottom: -20px;
+}
+
+#second-p {
+    margin-top: 0px;
+    margin-bottom: 0%;
+}
+
+#third-p {
+    margin-top: -22px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+/* STORYTHEME */
+.thumbnail, .story-image {
+  width: 60%;
+  border: 0 none;
+  box-shadow: none;
+  position: relative;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.grid-x {
+  text-align: center;
+}
+
+img {
+  opacity: 0.1;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+#imageOne:hover {
+  content: url('../images/easter.jpg');
+}
+
+#imageTwo:hover {
+  content: url('../images/monkey.jpg');
+}
+
+#imageThree:hover {
+  content: url('../images/santa.jpg');
+}
+
+.caption {
+    position: absolute;
+    text-align: center;
+    top: 18%;
+    left: 0;
+    width: 100%;
+    font-size: 2em;
+    font-family: 'Amatic SC', cursive;
+    color: white !important;
+}
+
+#imageOne:hover {
+  content: url('../images/easter.jpg');
+}
+
+#imageTwo:hover {
+  content: url('../images/monkey.jpg');
+}
+
+#imageThree:hover {
+  content: url('../images/santa.jpg');
+}
+
+
+
+
+
+
+
+
+
+/* Story Page */
+#storyDiv {
+  margin-top: 5%;
+  margin-right: 10px;
+  color: white;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+  word-wrap: break-word;
+  max-height: auto;
+}
+
+.sticky {
+  position: fixed;
+  top: 90%;
+  width: 80%;
+  left: 10%;
+}
+
+#userInput {
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
+
+#submitSentence {
+  padding: 0px, 10px, 10px, 0px;
+  height: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  margin-left: 5px;
+}
+
+#submitSentence:hover {
+  background-position: right center;
+}
+
+#resetBtn, #leaveBtn, #readBtn, #sentimentBtn {
+  padding: 0px, 10px, 10px, 0px;
+  height: 40px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  margin-left: 5px;
+}
+
+#resetBtn:hover, #leaveBtn:hover, #readBtn:hover, #sentimentBtn:hover {
+  background-position: right center;
+}
+
+#lastSentenceWarning {
+  color: red;
+}
+
+/* PLAYER SECTION IN STORYPAGE*/
+
+.player-list {
+  width: 100%;
+  line-height: 1;
+  background: rgba(0,0,0,0.2);
+  color: white;
+  margin-top: 40%;
+}
+
+.player-list, .player-list ul {
+  list-style-type: none;
+}
+
+.player-list ul {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.player-list ul li {
+  height: 4.0625rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+      -webkit-align-items: center;
+           -ms-flex-align: center;
+              align-items: center;
+}
+
+.player-list li {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.player-list header {
+  padding-left: 0.75rem;
+  padding-bottom: 0.5rem;
+  height: 45px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+       -ms-flex-align: end;
+  align-items: flex-end;
+  cursor: default;
+  background-color: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid grey;
+}
+
+.player-list li {
+  position: relative;
+}
+
+.player-list li label {
+  color: #0a0a0a;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+#playerStatus {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#sentimentDiv {
+  font-size: 4vw;
+  text-align: center;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 1300px) {
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .caption {
+    top: 10%;
+    font-size: 2em;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+  .caption {
+    top: 10%;
+    font-size: 2em;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  .caption {
+    top: 10%;
+    font-size: 1.5em;
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+
+  .caption {
+    top: 5%;
+    font-size: 1.5em;
+  }
+
+  #input-group {
+    position: fixed;
+    left: 8%;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .caption {
+    top: 12%;
+    font-size: 2em;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+  .caption {
+    top: 5%;
+    font-size: 2em;
+  }
+  
+}

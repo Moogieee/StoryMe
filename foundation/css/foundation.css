@@ -4588,8 +4588,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 a.thumbnail {
   transition: box-shadow 200ms ease-out; }
-  a.thumbnail:hover, a.thumbnail:focus {
-    box-shadow: 0 0 6px 1px rgba(23, 121, 186, 0.5); }
   a.thumbnail image {
     box-shadow: none; }
 
