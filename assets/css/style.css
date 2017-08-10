@@ -7,10 +7,13 @@ body {
 
 /*window height for index.html page*/
 #index {
-    height: 600px;
-    margin-top: 10%;
+  height: 600px;
+  margin-top: 10%;
 }
 
+#index2 {
+  margin-top: 10%;
+}
 /* Login Page */
 #nameInput {
   background-color: rgba(0,0,0,0.2);
@@ -49,7 +52,7 @@ background-position: right center;
 
 }
 
-#storyme-logo {
+#storyme-logo, #storyme-logo2 {
   font-family: 'Pacifico', cursive;
   font-size: 10vw;
   
@@ -60,14 +63,17 @@ background-position: right center;
   text-align: center;
 }
 
-.footer {
+.callout {
   background: transparent;
-  bottom: -190px;
+  bottom: -180px;
+  border: none;
   position: relative;
   display: none;
+  padding-bottom: 0;
+  margin: 0;
 }
 
-.show, .footer:hover {
+.show, .callout:hover {
     display: block;
 }
 
@@ -127,24 +133,23 @@ a:hover {
   text-align: center;
 }
 
-img {
-  opacity: 0.1;
-}
-
-img:hover {
-  opacity: 1;
+#imageOne, #imageTwo, #imageThree {
+  opacity: 0.2;
 }
 
 #imageOne:hover {
   content: url('../images/easter.jpg');
+  opacity: 1;
 }
 
 #imageTwo:hover {
   content: url('../images/monkey.jpg');
+  opacity: 1;
 }
 
 #imageThree:hover {
   content: url('../images/santa.jpg');
+  opacity: 1;
 }
 
 .caption {
@@ -174,13 +179,9 @@ img:hover {
 
 
 
-
-
-
-
 /* Story Page */
 #storyDiv {
-  margin-top: 5%;
+
   margin-right: 10px;
   color: white;
   text-align: center;
@@ -192,9 +193,10 @@ img:hover {
 
 .sticky {
   position: fixed;
-  top: 90%;
+  bottom: 0;
   width: 80%;
   left: 10%;
+
 }
 
 #userInput {
@@ -215,7 +217,7 @@ img:hover {
   color: white;
   border-radius: 2px;
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 #submitSentence:hover {
@@ -235,7 +237,7 @@ img:hover {
   color: white;
   border-radius: 2px;
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 #resetBtn:hover, #leaveBtn:hover, #readBtn:hover, #sentimentBtn:hover {
@@ -318,8 +320,10 @@ img:hover {
   text-align: center;
 }
 
-
-
+#emojiDiv {
+  width: 5%;
+  margin: 0 auto;
+}
 
 
 /* MEDIA QUERIES */

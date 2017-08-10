@@ -42,11 +42,13 @@ $(document).ready(function() {
   $(".one").hide();
   $(".one").fadeIn(4000);
   $(".two").hide();
-  $(".two").fadeIn(6000);
+  $(".two").fadeIn(5000);
   $(".three").hide();
-  $(".three").fadeIn(8000);
+  $(".three").fadeIn(6000);
   $("#proceedBtn1").hide();
   $("#proceedBtn2").hide();
+  $("#readBtn").hide();
+  $("#sentimentBtn").hide();
 
 
 
@@ -60,13 +62,13 @@ $(window).scroll(function(event) {
   function footer()
     {
         var scroll = $(window).scrollTop(); 
-        if(scroll>20)
+        if(scroll>10)
         { 
-            $(".footer").fadeIn("slow").addClass("show");
+            $(".callout").fadeIn("slow").addClass("show");
         }
         else
         {
-            $(".footer").fadeOut("slow").removeClass("show");
+            $(".callout").fadeOut("slow").removeClass("show");
         }
     }
     footer();
@@ -336,7 +338,11 @@ storyRef.on("value", function(snap){
     }
 
     if(numSentences === 6) {
+      $("#readBtn").show();
+      $("#sentimentBtn").show();
       $("#lastSentenceWarning").remove();
+      $("#userInput").remove();
+      $("#submitSentence").remove();
     }
 
     if(numSentences === (limitSentence+1)){
@@ -355,7 +361,7 @@ storyRef.on("value", function(snap){
 var storyRedisplay = function(){
 
  $("#storyDiv").empty();
-  $("#storyDiv").append("Here is the story!"+"<br>");
+  $("#storyDiv").append("<span style='font-weight: bold'>Here is the story!"+"<br><br>");
   for (var i = 0; i < finalStory.length; i++) {
     $("#storyDiv").append(finalStory[i]+"<br>");
 
@@ -413,10 +419,54 @@ var sentimentStory = function(){
            storySentimentScore = Math.floor(storySentimentScore / data.documents.length * 100);
             console.log(storySentimentScore);
             $("#sentimentDiv").append(storySentimentScore + "%");
+
+            // sentiment counter animation
+            var animationLength = 2000; //ms
+
+            var counter = 0,
+                counterEnd = storySentimentScore,
+                countInterval = animationLength / counterEnd; // 20 ms
+                a = 1.05; //speed factor
+
+            var summatory = 0;
+
+            function animate() {
+              $('#sentimentDiv').text(counter++ + "%");
+              if (counter <= storySentimentScore) {
+              
+                //Calculate dynamically newInterval
+                var newInterval = (animationLength-summatory) / ((a-Math.pow(a, -(storySentimentScore-1))) / (a-1));
+                
+                summatory += newInterval;
+                countInterval = newInterval;
+                setTimeout(animate, newInterval);
+              } 
+            } //end sentiment counter animation
+
+            animate();
+
+            if(storySentimentScore <= 100 && storySentimentScore > 80) {
+              $("#emojiDiv").append("<img src='assets/images/veryHappyEmoji.png' />").hide().fadeIn(6000);
+            
+            } else if (storySentimentScore <= 80 && storySentimentScore > 60) {
+              $("#emojiDiv").append("<img src='assets/images/happyEmoji.png' />").hide().fadeIn(6000);
+            
+            } else if (storySentimentScore <= 60 && storySentimentScore > 40) {
+              $("#emojiDiv").append("<img src='assets/images/neutralEmoji.png' />").hide().fadeIn(4000);
+
+            } else if (storySentimentScore <= 40 && storySentimentScore > 20) {
+              $("#emojiDiv").append("<img src='assets/images/almostSadEmoji.png' />").hide().fadeIn(2000);
+
+            } else if (storySentimentScore <= 20) {
+              $("#emojiDiv").append("<img src='assets/images/sadEmoji.png' />").hide().fadeIn(1000)
+
+            }
+
         })
         .fail(function() {
             console.log("error");
         });
+
   }
 ////When the reset button is pressed the database is cleared  
 $("#resetBtn").on("click", function(){
