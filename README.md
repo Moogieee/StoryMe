@@ -15,18 +15,25 @@ Things to Determine:
 
 The number of connections that are registered into the game we need to limit the number of players to make sure they take turns, we need to control so that every player is allowed one turn at a time.
 When the lines reach 10, all users are alerted alerted "this is the ending, put ending to the story".  
+
   -The user's sentence becomes the end of the story.
 
 Final Package:
 
   Display full story with giphs like a story book.
+  
   Sound API will read off the story.
+  
   Group-Project-1
 
 To Do:
 
   Merge to git hub
+  
   Read about angularjs
+  
   Empty the database
+  
   Turns???
+  
   Players number limit
