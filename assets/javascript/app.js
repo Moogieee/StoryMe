@@ -457,6 +457,25 @@ $(window).on('load', function() {
     usersRef.child(onPlayer).update({status: "online"});
   
 });
- 
+
+$(document).ready(function(){ 
+$("#userInput").emojioneArea({
+
+      pickerPosition: "top",
+      filterPosition: "bottom",
+      placeholder: "",
+      event: {
+        keypress: function (editor, event) {
+            $("#userInput").setText(""); // this work
+        }
+      
+      }
+      
+    });
+
+  });
+
+
+
 
 ///////////////////////////////////////////////////
