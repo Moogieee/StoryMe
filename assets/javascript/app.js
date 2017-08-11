@@ -424,19 +424,19 @@ var sentimentStory = function(){
             animate();
 
             if(storySentimentScore <= 100 && storySentimentScore > 80) {
-              $("#emojiDiv").append("<img src='assets/images/veryHappyEmoji.png' />").hide().fadeIn(6000);
+              $("#emojiDiv").html("<img src='assets/images/veryHappyEmoji.png' />").hide().fadeIn(2000);
             
             } else if (storySentimentScore <= 80 && storySentimentScore > 60) {
-              $("#emojiDiv").append("<img src='assets/images/happyEmoji.png' />").hide().fadeIn(6000);
+              $("#emojiDiv").html("<img src='assets/images/happyEmoji.png' />").hide().fadeIn(2000);
             
             } else if (storySentimentScore <= 60 && storySentimentScore > 40) {
-              $("#emojiDiv").append("<img src='assets/images/neutralEmoji.png' />").hide().fadeIn(4000);
+              $("#emojiDiv").html("<img src='assets/images/neutralEmoji.png' />").hide().fadeIn(2000);
 
             } else if (storySentimentScore <= 40 && storySentimentScore > 20) {
-              $("#emojiDiv").append("<img src='assets/images/almostSadEmoji.png' />").hide().fadeIn(2000);
+              $("#emojiDiv").html("<img src='assets/images/almostSadEmoji.png' />").hide().fadeIn(2000);
 
             } else if (storySentimentScore <= 20) {
-              $("#emojiDiv").append("<img src='assets/images/sadEmoji.png' />").hide().fadeIn(1000)
+              $("#emojiDiv").html("<img src='assets/images/sadEmoji.png' />").hide().fadeIn(1000)
 
             }
 
