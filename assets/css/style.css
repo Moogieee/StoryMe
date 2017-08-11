@@ -14,6 +14,10 @@ body {
 #index2 {
   margin-top: 10%;
 }
+
+#index3 {
+  margin-top: 5%;
+}
 /* Login Page */
 #nameInput {
   background-color: rgba(0,0,0,0.2);
@@ -188,7 +192,7 @@ a:hover {
   font-family: 'Amatic SC', cursive;
   font-size: 2em;
   word-wrap: break-word;
-  max-height: auto;
+  margin-bottom: 20px;
 }
 
 .sticky {
@@ -323,6 +327,7 @@ a:hover {
 #emojiDiv {
   width: 5%;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 
