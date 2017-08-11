@@ -281,6 +281,7 @@ $("#resetBtn").hide();
 startingSentence.on("child_added", function(snap){
 
     console.log(snap.val());
+  finalStory.push(snap.val());
  /*themeSelected = true;
 
     var readyPlayer = parseInt(JSON.parse(sessionStorage.getItem("playerKey")));
@@ -369,13 +370,18 @@ var storyRedisplay = function(){
 }
 
 ////text to speech to tell the story
+var counter = 0;
 var storyTell = function(){
-
-   var text = encodeURIComponent(finalStory.toString());
+  if(counter <finalStory.length){
+    text = encodeURIComponent(finalStory[counter]);
     var url = "http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen=32&client=tw-ob&q="+ text +"&tl=En-gb";
-    var speech = $("<audio>");
+    var speech = $("<audio onended='storyTell()'>");
+    counter++;
     speech.attr("src", url).get(0).play();
-
+  }
+  else {
+    counter = 0
+  }
 
 }
 
