@@ -162,35 +162,7 @@ $("#submit-button").on("click", function(event){
 usersRef.on("value", function(snap){
   playersNum = snap.numChildren();
 
-/*
- var userNum = parseInt(JSON.parse(sessionStorage.getItem("playerKey")));
- console.log(userNum );
 
-    if(userNum  === 0){
-      console.log("please sign in");
-    }
-   if(playersNum > 0){ 
-
-    if(userNum   === 1){
-      console.log("you are the first player");
-
-      $("#welcomeMessage").html("You are the first player! Please proceed to choose the story theme");
-       var proceedBtn1 = $("<button id='proceedBtn1'>Proceed</button>");
-       proceedBtn1.show();
-       $("#welcomeMessage").append(proceedBtn1);
-    }
-    else if (userNum > 1){
-      console.log("you are not the first player");
-      $("#welcomeMessage").html("Please wait for the first player to choose the theme and then join the fun!!!<br>");
-
-      var proceedBtn2 = $("<button id='proceedBtn2'>Proceed</button>");
-       if (themeSelected)
-            proceedBtn2.show();
-       $("#welcomeMessage").append(proceedBtn2);
-       
-    }
-
-*/
     $("#playerStatus").empty();
     if(playersNum > 0){ 
     for (var i = 1; i <= playersNum; i++) {
