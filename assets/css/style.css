@@ -333,23 +333,6 @@ a:hover {
 
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 1600px) {
-  #index {
-    margin-top: 30%;
-    height: 1600px;
-  }
-  
-  .callout {
-  background: transparent;
-  bottom: -180px;
-  border: none;
-  position: relative;
-  display: none;
-  padding-bottom: 0;
-  margin: 0;
-  }
-}
-
 @media only screen and (max-width: 1000px) {
 
   .caption {
