@@ -2,29 +2,29 @@
    
   ///Erika's Firebase
   // // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyD64Pvbid5872NQNwrRm8pjeWvqJ4wykDM",
-    authDomain: "storyme-5b335.firebaseapp.com",
-    databaseURL: "https://storyme-5b335.firebaseio.com",
-    projectId: "storyme-5b335",
-    storageBucket: "storyme-5b335.appspot.com",
-    messagingSenderId: "574338650013"
-  };
+//   var config = {
+//     apiKey: "AIzaSyD64Pvbid5872NQNwrRm8pjeWvqJ4wykDM",
+//     authDomain: "storyme-5b335.firebaseapp.com",
+//     databaseURL: "https://storyme-5b335.firebaseio.com",
+//     projectId: "storyme-5b335",
+//     storageBucket: "storyme-5b335.appspot.com",
+//     messagingSenderId: "574338650013"
+//   };
 
   firebase.initializeApp(config);
 
 
 /* Carie's Firebase */
   // Initialize Firebase
-  // var config = {
-  //   apiKey: "AIzaSyCgkD-pSu1mv32BAbAQ5H3KHRmZrRBxlfs",
-  //   authDomain: "cn-firebase.firebaseapp.com",
-  //   databaseURL: "https://cn-firebase.firebaseio.com",
-  //   projectId: "cn-firebase",
-  //   storageBucket: "cn-firebase.appspot.com",
-  //   messagingSenderId: "992428345090"
-  // };
-  // firebase.initializeApp(config);
+  var config = {
+    apiKey: "AIzaSyCgkD-pSu1mv32BAbAQ5H3KHRmZrRBxlfs",
+    authDomain: "cn-firebase.firebaseapp.com",
+    databaseURL: "https://cn-firebase.firebaseio.com",
+    projectId: "cn-firebase",
+    storageBucket: "cn-firebase.appspot.com",
+    messagingSenderId: "992428345090"
+  };
+  firebase.initializeApp(config);
 
  //  /// Marwa's Firebase////
  // // Initialize Firebase
