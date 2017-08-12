@@ -1,4 +1,5 @@
   
+   
   ///Erika's Firebase
   // // Initialize Firebase
   // var config = {
@@ -286,7 +287,6 @@ var sentimentStory = function(){
     "numberOfLanguagesToDetect": 1,
   };
       
-<<<<<<< HEAD
   $.ajax({
     url:  "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment",
     beforeSend: function(xhrObj){
@@ -344,72 +344,6 @@ var sentimentStory = function(){
 
     } else if (storySentimentScore <= 20) {
       $("#emojiDiv").append("<img src='assets/images/sadEmoji.png' />").hide().fadeIn(1000)
-=======
-       $.ajax({
-            url:  "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment",
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Content-Type","application/json");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","16a787fa169245dc87fb41f6ddb7d0f0");
-            },
-            type: "POST",
-            // Request body
-            data: JSON.stringify({
-                 documents: documents
-
-               }),
-        })
-        .done(function(data) {
-            var storySentimentScore = 0;
-            console.log(data.documents[0].score);
-            for (var i = 0; i < data.documents.length; i++) {
-              storySentimentScore+= data.documents[i].score;
-            }
-
-           storySentimentScore = Math.floor(storySentimentScore / data.documents.length * 100);
-            console.log(storySentimentScore);
-            $("#sentimentDiv").append(storySentimentScore + "%");
-
-            // sentiment counter animation
-            var animationLength = 2000; //ms
-
-            var counter = 0,
-                counterEnd = storySentimentScore,
-                countInterval = animationLength / counterEnd; // 20 ms
-                a = 1.05; //speed factor
-
-            var summatory = 0;
-
-            function animate() {
-              $('#sentimentDiv').text(counter++ + "%");
-              if (counter <= storySentimentScore) {
-              
-                //Calculate dynamically newInterval
-                var newInterval = (animationLength-summatory) / ((a-Math.pow(a, -(storySentimentScore-1))) / (a-1));
-                
-                summatory += newInterval;
-                countInterval = newInterval;
-                setTimeout(animate, newInterval);
-              } 
-            } //end sentiment counter animation
-
-            animate();
-
-            if(storySentimentScore <= 100 && storySentimentScore > 80) {
-              $("#emojiDiv").html("<img src='assets/images/veryHappyEmoji.png' />").hide().fadeIn(2000);
-            
-            } else if (storySentimentScore <= 80 && storySentimentScore > 60) {
-              $("#emojiDiv").html("<img src='assets/images/happyEmoji.png' />").hide().fadeIn(2000);
-            
-            } else if (storySentimentScore <= 60 && storySentimentScore > 40) {
-              $("#emojiDiv").html("<img src='assets/images/neutralEmoji.png' />").hide().fadeIn(2000);
-
-            } else if (storySentimentScore <= 40 && storySentimentScore > 20) {
-              $("#emojiDiv").html("<img src='assets/images/almostSadEmoji.png' />").hide().fadeIn(2000);
-
-            } else if (storySentimentScore <= 20) {
-              $("#emojiDiv").html("<img src='assets/images/sadEmoji.png' />").hide().fadeIn(1000)
->>>>>>> b99aa5854fcf4fa503971976931eec24365d6616
 
     }
 
