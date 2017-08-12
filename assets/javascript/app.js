@@ -11,7 +11,7 @@
 //     messagingSenderId: "574338650013"
 //   };
 
-  firebase.initializeApp(config);
+  // firebase.initializeApp(config);
 
 
 /* Carie's Firebase */
