@@ -20,70 +20,65 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Pacifico|Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Pacifico|Amatic+SC|Josefin+Slab" rel="stylesheet">
+
+    <!-- Angularjs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
   </head>
-  <body>
+  <body id="index3" ng-app="">
 
 
-  <div  id="playerId">
-  	
-  </div>
-<!-- ================== Navigation ================== -->
 
-    <div class="grid-container">
-      <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+<!-- ================== Player Status ================== -->
 
-        <!-- hamburger button -->
-
-        <button class="menu-icon" type="button" data-toggle></button>
-        <div class="title-bar-title">Menu</div>
+    <div class="grid-x">
+      <div class="large-2">
       </div>
-
-      <!-- animation for menu when hamburger is cicked -->
-      <div class="top-bar" id="example-animated-menu" data-animate="fade-in fade-out">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <div id="greenteam-logo"><p id="first-p">gre</p><p id="second-p">enT</p><p id="third-p">eam</p></div>
-            <!-- <div id="greenteam-logo"><p id="first-p">Green</p><p id="second-p">Team</p></div> -->
-          </ul>
+      <!-- Story Dump -->
+      <div class="small-12 medium-8 large-8">
+        <div id="storyDiv"> 
         </div>
-
-         <div class="top-bar-right">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li class="links"><a href="#">Reset</a></li>
-            <li class="links"><a href="#">About</a></li>
-            <li class="links"><a href="#">Contact</a></li>
+      </div>
+      <div class="small-12 medium-4 large-2">
+        <section class="player-list" id="playersList">
+          <header>Players</header>
+          <ul id="playerStatus" style="word-wrap: break-word;">
+            <li> 
+            </li>
           </ul>
-        </div> 
+        </section>
       </div>
+    </div>
+
+  <!-- ================== Sentiment Div ================== -->
 
 
-
-<!-- ================== Story Dump ================== -->
-
-      <div id="storyDiv">
-
+      <div class="row">
+        <div class="large-12 ">
+          <div id="sentimentDiv">
+          </div>
+        </div>
       </div>
-      <div id="sentimentDiv">
+      <div class="row">
+        <div class="large-12 align-center">
+          <div id="emojiDiv" class="emoji">
+          </div>
+        </div>
       </div>
-
-
- <!-- ================== Users Status ================== --> 
- 	<div id="playerStatus">
-
-    </div>    
 
 <!-- ================== User Story Input ================== -->
 
-      <form>
-        <div class="row">
-          <div class="small-12 medium-8 large-6 columns">
-            <div class="sticky" data-sticky data-stick-to="bottom">
+
+      <form name="myForm">
+        <div class="grid-x sticky" id="inputDiv">
+          <div class="large-12 cell" id="lastSentenceWarning">
+          </div>
+            <div class="medium-8 large-4 large-offset-4 cell" id="input-group">
               <div class="input-group"> 
-                <input type="text" id="userInput">
+                <input type="text" id="userInput" name="myInput" ng-model="myInput" required>
                 <div class="input-group-button">
-                  <input type="submit" class="button" value="Write" id="submitSentence">
+                  <input type="submit" class="button" value="Write" id="submitSentence" ng-disabled="myForm.$invalid">
                 </div>
                 <div class="input-group-button">
                   <input type="reset" class="button" value="Reset" id="resetBtn">
@@ -92,18 +87,21 @@
                   <input type="reset" class="button" value="Leave" id="leaveBtn">
                 </div>
                 <div class="input-group-button">
-                  <input type="read" class="button" value="Read Story" id="readBtn">
+                  <input type="submit" class="button" value="Read Story" id="readBtn">
                 </div>
                 <div class="input-group-button">
-                  <input type="sentiment" class="button" value="Sentiment" id="sentimentBtn">
+                  <input type="submit" class="button" value="Sentiment" id="sentimentBtn">
                 </div>
               </div>
-          </div>
+            </div>
+          <div class="medium-2 large-3 cell">
           </div>
         </div>
       </form>
 
-        
+
+
+
     </div> <!-- end container -->
 
     <script src="foundation/js/vendor/jquery.js"></script>
