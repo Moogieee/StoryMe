@@ -334,6 +334,11 @@ a:hover {
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 1200px) {
+  #index { 
+    height: 1000px;
+    margin-top: 10%;
+  }
+  
   .callout {
     background: transparent;
     bottom: -200px;
