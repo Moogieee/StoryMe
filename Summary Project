@@ -1,0 +1,57 @@
+Summary Project
+
+No need for a powerpoint. We will just show the website of the App. The presentation has to be 8min long. 
+
+1. Description: An app targeting youth, allowing to construct a story collaboratively by adding sentences to a story. When they are done, the app reads back the story and renders a sentiment rating which is a percentage that details how positive or negative the whole story is. -Peter
+
+
+2. Motivation: To invest in the creativity of its users. We thought about our kids and wanted to connect with them. We thought it would be fun as opposed something more technical. -Marwa
+
+3. Results: Accomplished to finish the App. It works!!  [we might show the app] This area is more technical. List the APIs.
+	a) Angular for the Validation and Restrictation
+	b) Firebase - Google
+	c) Sentiment - Microsoft Azure
+	d) Adorable Avatars - Independent
+	e)Text to Speech - Has time limit since we used the free option.
+	f) Foundation - Used it to appeal to younger demographic
+
+	Use the avatar to display onine and offline players and to identify users. 
+	The rest are self explanatory. -Carie
+
+
+
+4. Team Efforts - We were very structured from the start. We split ourselves into two front end and back end. We had a manager, towards the wrap up of the project we collaborately jumped into different areas of work as needed and met almost every day. -Erika
+
+5. Challenges - Learning Foundation was hard because the front end group learned it from scratch. Overall, Github to see everything to merge. Firebase. APIs finding and then learning how to use them. Finding one that is free or not limited. -Everyone
+	a) Github - Peter 
+	b) APIs - Erika
+	c) Foundation - Carie
+	d) Firebase - Marwa
+
+6. Products that have the most simple ideas are the most popular. 
+Now days, users are very drawn to sharing information together. 
+We wanted to appeal to those users. 
+ a) About 300M users use Twittter on a monthly basis, as of 2017.-Statist
+ c) 700M users of Instagram per month -Business Insider
+ d) Facebook 1.9B monthly users - CNN Money
+ 	-Marwa
+
+7. Jump to show the product. 
+
+
+8. Improvements - Making the players take turns. Adding more themes, adding more structure. Having them be able to enter their pictures. Right now it looks more like a game, in the future we would like to add more educational concepts and maybe some parental controls.  Visual improvements to make it look more like a book. Implement controls for content. A way to vet out trolls, etc. -Erika 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

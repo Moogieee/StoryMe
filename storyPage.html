@@ -1,11 +1,14 @@
 <!-- User will click on a thumbnail on index.html and will bring them to this page where they can start writing their story -->
 
-<!doctype html>
+<!doctype html "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhml1/DTD/XHTML1-transtional.dtd">
+<html class="no-js" lang="en" dir="ltr" xmlns = "http://www.w3.org/1999/xhtml" xml:lang = "en">
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv = "Content-Type" content = "text/html;charset=utf-8"/>
+
     <title>StoryMe</title>
 
     <!-- jQuery -->
@@ -76,7 +79,7 @@
           </div>
             <div class="medium-8 large-4 large-offset-4 cell" id="input-group">
               <div class="input-group"> 
-                <input type="text" id="userInput" name="myInput" ng-model="myInput" required>
+                <input type="text" id="userInput">
                 <div class="input-group-button">
                   <input type="submit" class="button" value="Write" id="submitSentence" ng-disabled="myForm.$invalid">
                 </div>
@@ -109,5 +112,14 @@
     <script src="foundation/js/vendor/foundation.js"></script>
     <script src="foundation/js/app.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+        <!-- Emojis Links -->
+      <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="dist/emojionearea.min.css">
+    <script type="text/javascript" src="dist/emojionearea.min.js"></script>
   </body>
 </html>
